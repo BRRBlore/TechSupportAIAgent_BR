@@ -7,8 +7,9 @@ import torch
 app = FastAPI()
 
 # ✅ Correct Model Path for Google Drive
-model_path = "/content/drive/MyDrive/AI_Agents_BR/trained_models_sales_only_continued/checkpoint-11775"
-model = T5ForConditionalGeneration.from_pretrained(model_path)
+model_name = "bapir/TechSupportAIAgent_Model"
+model = T5ForConditionalGeneration.from_pretrained(model_name)
+tokenizer = T5Tokenizer.from_pretrained(model_name)
 tokenizer = T5Tokenizer.from_pretrained("t5-small")
 
 class Query(BaseModel):
